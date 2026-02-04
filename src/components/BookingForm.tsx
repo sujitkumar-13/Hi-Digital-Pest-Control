@@ -31,9 +31,9 @@ const formSchema = z.object({
   phone: z
     .string()
     .trim()
-    .min(10, { message: "Please enter a valid phone number" })
-    .max(15, { message: "Phone number is too long" })
-    .regex(/^[0-9+\-\s]+$/, { message: "Please enter a valid phone number" }),
+    .min(10, { message: "Please enter a valid 10-digit phone number" })
+    .max(10, { message: "Phone number must be 10 digits" })
+    .regex(/^[0-9]+$/, { message: "Please enter digits only" }),
   address: z
     .string()
     .trim()
@@ -176,9 +176,13 @@ const BookingForm = () => {
                           </FormLabel>
                           <FormControl>
                             <Input
-                              placeholder="+91 XXXXX XXXXX"
+                              placeholder="10-digit phone number"
                               className="h-12 bg-background"
                               {...field}
+                              onChange={(e) => {
+                                const value = e.target.value.replace(/\D/g, "");
+                                field.onChange(value);
+                              }}
                             />
                           </FormControl>
                           <FormMessage />

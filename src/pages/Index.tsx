@@ -23,9 +23,9 @@ const Index = () => {
         <HowItWorks />
         <Testimonials />
         <BookingForm />
-        <FAQ />
         <LocalTrust />
         <Contact />
+        <FAQ />
       </main>
       <Footer />
       <StickyCTA />

@@ -42,7 +42,7 @@ const Contact = () => {
                 <Phone className="w-6 h-6" />
               </div>
               <div className="text-left">
-                <p className="text-sm text-muted-foreground mb-1">Or call</p>
+                <p className="text-sm text-muted-foreground mb-1">Or call us at</p>
                 <p className="font-heading text-xl font-bold text-foreground">
                   +91 6393531161
                 </p>

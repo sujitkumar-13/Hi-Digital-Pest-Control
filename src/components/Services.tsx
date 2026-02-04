@@ -118,7 +118,7 @@ const Services = () => {
             Our Services
           </span>
           <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Comprehensive Pest Control Solutions
+            Trusted by 10,000+ Families & Businesses in Varanasi
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             From common household pests to complex infestations, we have the expertise
