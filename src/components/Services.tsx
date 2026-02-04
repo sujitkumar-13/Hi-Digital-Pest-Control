@@ -1,4 +1,4 @@
-import { Bug, Rat, Zap, Home, Leaf, Shield } from "lucide-react";
+import { Bug, Rat, Zap, Home, Leaf, Shield, Star, Users, Award, UserCheck } from "lucide-react";
 
 const Services = () => {
   const services = [
@@ -40,6 +40,13 @@ const Services = () => {
     },
   ];
 
+  const trustFeatures = [
+    { icon: Star, text: "4.9/5 Google Rating" },
+    { icon: Users, text: "1000+ Homes Served" },
+    { icon: Award, text: "Government Approved Chemicals" },
+    { icon: UserCheck, text: "Trained & Verified Staff" },
+  ];
+
   return (
     <section id="services" className="section-padding bg-muted/30">
       <div className="container-custom">
@@ -58,7 +65,7 @@ const Services = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {services.map((service, index) => (
             <div
               key={service.name}
@@ -79,10 +86,24 @@ const Services = () => {
           ))}
         </div>
 
+        {/* Trust Features Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          {trustFeatures.map((feature) => (
+            <div key={feature.text} className="flex flex-col items-center p-4 bg-background rounded-xl border border-border shadow-sm text-center group hover:border-secondary/50 transition-colors">
+              <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                <feature.icon className="w-5 h-5 text-secondary" />
+              </div>
+              <p className="text-sm font-bold text-foreground leading-tight">
+                {feature.text}
+              </p>
+            </div>
+          ))}
+        </div>
+
         {/* CTA */}
-        <div className="text-center mt-8">
+        <div className="text-center">
           <a href="#contact" className="btn-primary text-base px-8 py-4">
-            Get a Free Quote
+            Call for Free Inspection
           </a>
         </div>
       </div>

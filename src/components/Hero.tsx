@@ -3,7 +3,7 @@ import { Phone, Calendar, CheckCircle2 } from "lucide-react";
 const Hero = () => {
   const benefits = [
     "100% Safe Treatments",
-    "Same Day Service",
+    "Same-Day Service Available",
     "Satisfaction Guaranteed",
   ];
 
@@ -27,18 +27,18 @@ const Hero = () => {
             </div>
 
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-6">
-              Varanasi’s Most Trusted{" "}
+              Best{" "}
               <span className="gradient-text">Pest Control</span>{" "}
-              Experts
+              Services in Varanasi
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0">
-              Safe, effective, and professional pest control services for homes
-              & businesses. Get rid of pests with our eco-friendly solutions.
+              Safe, effective & eco-friendly pest control services for homes and businesses.
+              Protect your family and property with guaranteed results.
             </p>
 
             {/* Pests we handle */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8">
+            {/* <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8">
               {[
                 { name: "Ants", emoji: "🐜" },
                 { name: "Cockroaches", emoji: "🪳" },
@@ -55,7 +55,7 @@ const Hero = () => {
                   <span>{pest.name}</span>
                 </div>
               ))}
-            </div>
+            </div> */}
 
             {/* Benefits */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">

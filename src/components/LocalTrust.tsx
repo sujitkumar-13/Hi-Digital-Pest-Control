@@ -39,7 +39,7 @@ const LocalTrust = () => {
             </div>
 
             {/* Stats Row */}
-            <div className="grid sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
+            <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
                 <MapPin className="w-8 h-8 text-orange-300 mx-auto mb-2" />
                 <p className="text-2xl font-bold text-white">Local</p>
@@ -47,7 +47,7 @@ const LocalTrust = () => {
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
                 <Clock className="w-8 h-8 text-orange-300 mx-auto mb-2" />
-                <p className="text-2xl font-bold text-white">Same Day</p>
+                <p className="text-2xl font-bold text-white">Same-Day Service Available</p>
                 <p className="text-green-200 text-sm">Response</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
