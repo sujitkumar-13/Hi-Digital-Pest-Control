@@ -7,19 +7,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-10 md:gap-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
-                <Shield className="w-6 h-6 text-secondary-foreground" />
+            <a href="/" className="inline-block mb-4">
+              <div className="w-24 h-24 md:w-32 md:h-32 rounded-lg overflow-hidden flex items-center justify-center bg-transparent">
+                <img src="/logo.png" alt="Hi Digital Pest Control Logo" className="w-full h-full object-contain" />
               </div>
-              <div className="flex flex-col">
-                <span className="font-heading font-bold text-lg leading-tight text-foreground">
-                  Hi Digital
-                </span>
-                <span className="text-xs text-muted-foreground font-medium">
-                  Pest Control
-                </span>
-              </div>
-            </div>
+            </a>
             <p className="text-muted-foreground mb-4">
               Your trusted pest control specialists in Varanasi. Safe, effective,
               and professional services.
@@ -91,7 +83,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
+    </footer >
   );
 };
 

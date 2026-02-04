@@ -5,7 +5,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
+    { name: "Home", href: "/" },
     { name: "Services", href: "#services" },
     { name: "Why Us", href: "#why-us" },
     { name: "About", href: "#about" },
@@ -17,17 +17,9 @@ const Header = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center">
-              <Shield className="w-6 h-6 text-secondary-foreground" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-heading font-bold text-lg leading-tight text-foreground">
-                Hi Digital
-              </span>
-              <span className="text-xs text-muted-foreground font-medium">
-                Pest Control
-              </span>
+          <a href="/" className="flex items-center">
+            <div className="w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden flex items-center justify-center">
+              <img src="/logo.png" alt="Hi Digital Pest Control Logo" className="w-full h-full object-contain" />
             </div>
           </a>
 

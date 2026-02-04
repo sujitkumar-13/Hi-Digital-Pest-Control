@@ -32,59 +32,58 @@ const WhyChooseUs = () => {
   return (
     <section id="why-us" className="section-padding bg-background">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content Side */}
-          <div>
-            <span className="inline-block px-4 py-2 rounded-full bg-orange-100 text-orange-600 text-sm font-medium mb-4">
-              Why Choose Us
-            </span>
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              The Most Trusted Pest Control in{" "}
-              <span className="gradient-text">Varanasi</span>
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              With years of experience serving homes and businesses in Varanasi,
-              we've built a reputation for reliable, effective, and safe pest control services.
-            </p>
+        {/* Section Header */}
+        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+          <span className="inline-block px-4 py-2 rounded-full bg-orange-100 text-orange-600 text-sm font-medium mb-4">
+            Why Choose Us
+          </span>
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            The Most Trusted Pest Control in{" "}
+            <span className="gradient-text">Varanasi</span>
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            With years of experience serving homes and businesses in Varanasi,
+            we've built a reputation for reliable, effective, and safe pest control services.
+          </p>
+        </div>
 
-            <div className="space-y-6">
-              {reasons.map((reason, index) => (
-                <div
-                  key={reason.title}
-                  className="flex gap-4 items-start"
-                >
-                  <div className="flex-shrink-0 icon-circle">
-                    <reason.icon className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-heading text-lg font-bold text-foreground mb-1">
-                      {reason.title}
-                    </h3>
-                    <p className="text-muted-foreground">{reason.description}</p>
-                  </div>
-                </div>
-              ))}
+        {/* Reasons Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-16 px-4">
+          {reasons.map((reason) => (
+            <div
+              key={reason.title}
+              className="bg-card p-6 rounded-2xl border border-border hover:border-primary/50 transition-all group flex flex-col items-start text-left shadow-sm"
+            >
+              <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                <reason.icon className="w-6 h-6 text-secondary" />
+              </div>
+              <h3 className="font-heading text-lg font-bold text-foreground mb-3">
+                {reason.title}
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {reason.description}
+              </p>
             </div>
+          ))}
+        </div>
+
+        {/* Stats Row */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 px-4">
+          <div className="bg-green-50/50 rounded-2xl p-6 md:p-8 text-left border border-green-100 shadow-sm hover:shadow-md hover:border-green-200 transition-all">
+            <p className="font-heading text-4xl md:text-5xl font-bold text-green-600 mb-2">10+</p>
+            <p className="text-muted-foreground font-semibold text-sm md:text-base uppercase tracking-wide">Years Experience</p>
           </div>
-
-          {/* Stats Side */}
-          <div className="grid grid-cols-2 gap-6">
-            <div className="bg-green-50 rounded-2xl p-8 text-center">
-              <p className="font-heading text-5xl font-bold text-green-600 mb-2">10+</p>
-              <p className="text-muted-foreground font-medium">Years Experience</p>
-            </div>
-            <div className="bg-orange-50 rounded-2xl p-8 text-center">
-              <p className="font-heading text-5xl font-bold text-orange-500 mb-2">1000+</p>
-              <p className="text-muted-foreground font-medium">Happy Customers</p>
-            </div>
-            <div className="bg-orange-50 rounded-2xl p-8 text-center">
-              <p className="font-heading text-5xl font-bold text-orange-500 mb-2">100%</p>
-              <p className="text-muted-foreground font-medium">Satisfaction Rate</p>
-            </div>
-            <div className="bg-green-50 rounded-2xl p-8 text-center">
-              <p className="font-heading text-5xl font-bold text-green-600 mb-2">24/7</p>
-              <p className="text-muted-foreground font-medium">Customer Support</p>
-            </div>
+          <div className="bg-orange-50/50 rounded-2xl p-6 md:p-8 text-left border border-orange-100 shadow-sm hover:shadow-md hover:border-orange-200 transition-all">
+            <p className="font-heading text-4xl md:text-5xl font-bold text-orange-500 mb-2">1000+</p>
+            <p className="text-muted-foreground font-semibold text-sm md:text-base uppercase tracking-wide">Happy Customers</p>
+          </div>
+          <div className="bg-orange-50/50 rounded-2xl p-6 md:p-8 text-left border border-orange-100 shadow-sm hover:shadow-md hover:border-orange-200 transition-all">
+            <p className="font-heading text-4xl md:text-5xl font-bold text-orange-500 mb-2">100%</p>
+            <p className="text-muted-foreground font-semibold text-sm md:text-base uppercase tracking-wide">Satisfaction Rate</p>
+          </div>
+          <div className="bg-green-50/50 rounded-2xl p-6 md:p-8 text-left border border-green-100 shadow-sm hover:shadow-md hover:border-green-200 transition-all">
+            <p className="font-heading text-4xl md:text-5xl font-bold text-green-600 mb-2">24/7</p>
+            <p className="text-muted-foreground font-semibold text-sm md:text-base uppercase tracking-wide">Customer Support</p>
           </div>
         </div>
       </div>

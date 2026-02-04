@@ -54,7 +54,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a href="#contact" className="btn-primary text-base px-8 py-4">
                 <Calendar className="w-5 h-5" />
-                Book Free Inspection
+                Schedule Free Home Inspection
               </a>
               <a href="tel:+918707751161" className="btn-secondary text-base px-8 py-4">
                 <Phone className="w-5 h-5" />
