@@ -85,11 +85,11 @@ const BookingForm = () => {
     // Build WhatsApp message with validated & encoded data
     const whatsappMessage = encodeURIComponent(
       `Hello! I'd like to book a pest control inspection.\n\n` +
-        `Name: ${data.name}\n` +
-        `Phone: ${data.phone}\n` +
-        `Address: ${data.address}\n` +
-        `Pest Type: ${pestTypes.find((p) => p.value === data.pestType)?.label}\n` +
-        `${data.message ? `Additional Info: ${data.message}` : ""}`
+      `Name: ${data.name}\n` +
+      `Phone: ${data.phone}\n` +
+      `Address: ${data.address}\n` +
+      `Pest Type: ${pestTypes.find((p) => p.value === data.pestType)?.label}\n` +
+      `${data.message ? `Additional Info: ${data.message}` : ""}`
     );
 
     setIsSubmitting(false);
@@ -113,39 +113,23 @@ const BookingForm = () => {
   return (
     <section id="booking" className="section-padding bg-background">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div>
-            <span className="inline-block px-4 py-2 rounded-full bg-orange-100 text-orange-600 text-sm font-medium mb-4">
-              Book Now
-            </span>
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Schedule Your{" "}
-              <span className="gradient-text">Free Inspection</span>
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Fill out the form and our team will contact you within 24 hours to
-              schedule a convenient time for your free inspection.
-            </p>
+        {/* Section Header */}
+        <div className="text-center mb-12 md:mb-16">
+          <span className="inline-block px-4 py-2 rounded-full bg-orange-100 text-orange-600 text-sm font-medium mb-4">
+            Book Now
+          </span>
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+            Schedule Your <span className="gradient-text">Free Inspection</span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Fill out the form and our team will contact you within 24 hours to
+            schedule a convenient time for your free inspection.
+          </p>
+        </div>
 
-            {/* Benefits List */}
-            <div className="space-y-4">
-              {[
-                "Free property inspection",
-                "No obligation quote",
-                "Same-day response",
-                "Expert recommendations",
-              ].map((benefit) => (
-                <div key={benefit} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-secondary flex-shrink-0" />
-                  <span className="text-foreground">{benefit}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Form */}
-          <div className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg">
+        <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+          {/* Form Side */}
+          <div className="bg-card rounded-2xl p-6 md:p-8 border border-border shadow-lg flex flex-col justify-between">
             {isSubmitted ? (
               <div className="text-center py-12">
                 <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
@@ -181,25 +165,54 @@ const BookingForm = () => {
                     )}
                   />
 
-                  <FormField
-                    control={form.control}
-                    name="phone"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-foreground font-medium">
-                          Phone Number *
-                        </FormLabel>
-                        <FormControl>
-                          <Input
-                            placeholder="+91 XXXXX XXXXX"
-                            className="h-12 bg-background"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <FormField
+                      control={form.control}
+                      name="phone"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-foreground font-medium">
+                            Phone Number *
+                          </FormLabel>
+                          <FormControl>
+                            <Input
+                              placeholder="+91 XXXXX XXXXX"
+                              className="h-12 bg-background"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="pestType"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-foreground font-medium">
+                            Pest Type *
+                          </FormLabel>
+                          <Select onValueChange={field.onChange} value={field.value}>
+                            <FormControl>
+                              <SelectTrigger className="h-12 bg-background">
+                                <SelectValue placeholder="Select type" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              {pestTypes.map((pest) => (
+                                <SelectItem key={pest.value} value={pest.value}>
+                                  {pest.label}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
 
                   <FormField
                     control={form.control}
@@ -210,39 +223,12 @@ const BookingForm = () => {
                           Property Address *
                         </FormLabel>
                         <FormControl>
-                          <Textarea
+                          <Input
                             placeholder="Enter your complete address"
-                            className="min-h-[80px] bg-background resize-none"
+                            className="h-12 bg-background"
                             {...field}
                           />
                         </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-
-                  <FormField
-                    control={form.control}
-                    name="pestType"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel className="text-foreground font-medium">
-                          Pest Type *
-                        </FormLabel>
-                        <Select onValueChange={field.onChange} value={field.value}>
-                          <FormControl>
-                            <SelectTrigger className="h-12 bg-background">
-                              <SelectValue placeholder="Select pest type" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            {pestTypes.map((pest) => (
-                              <SelectItem key={pest.value} value={pest.value}>
-                                {pest.label}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -259,7 +245,7 @@ const BookingForm = () => {
                         <FormControl>
                           <Textarea
                             placeholder="Describe your pest problem..."
-                            className="min-h-[80px] bg-background resize-none"
+                            className="min-h-[100px] bg-background resize-none"
                             {...field}
                           />
                         </FormControl>
@@ -271,7 +257,7 @@ const BookingForm = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-primary w-full text-base py-4 disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="btn-primary w-full text-base py-4 disabled:opacity-70 disabled:cursor-not-allowed mt-2"
                   >
                     {isSubmitting ? (
                       <>
@@ -288,6 +274,41 @@ const BookingForm = () => {
                 </form>
               </Form>
             )}
+          </div>
+
+          {/* Content & Map Side */}
+          <div className="flex flex-col gap-6 h-full">
+            {/* Benefits Card */}
+            <div className="bg-orange-50 rounded-2xl p-6 border border-orange-100">
+              <h3 className="font-heading font-bold text-foreground mb-4">Why Book With Us?</h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {[
+                  "Free property inspection",
+                  "No obligation quote",
+                  "Same-day response",
+                  "Expert recommendations",
+                ].map((benefit) => (
+                  <div key={benefit} className="flex items-center gap-3">
+                    <CheckCircle2 className="w-5 h-5 text-secondary flex-shrink-0" />
+                    <span className="text-sm font-medium text-foreground">{benefit}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Map Card */}
+            <div className="flex-grow min-h-[300px] rounded-2xl overflow-hidden border border-border shadow-lg bg-card">
+              <iframe
+                title="Office Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.5683262608467!2d83.0210037144866!3d25.2683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e318cf1b37dfb%3A0x67a9c336b13e9a4c!2sLanka%2C%20Varanasi%2C%20Uttar%20Pradesh%2022100!5e0!3m2!1sen!2sin!4v1651234567890!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0, minHeight: "100%" }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>

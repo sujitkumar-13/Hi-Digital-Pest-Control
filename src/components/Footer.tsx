@@ -57,7 +57,7 @@ const Footer = () => {
             <div className="flex items-start gap-2 text-muted-foreground">
               <MapPin className="w-4 h-4 text-secondary mt-1 flex-shrink-0" />
               <address className="not-italic">
-                Panchvati Road, Lanka, Ramnagar<br />
+                Near Ramlila Maidan, Lanka, Ramnagar<br />
                 Varanasi, Uttar Pradesh – 221008
               </address>
             </div>
