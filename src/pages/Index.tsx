@@ -22,10 +22,10 @@ const Index = () => {
         <WhyChooseUs />
         <HowItWorks />
         <Testimonials />
-        <BookingForm />
         <LocalTrust />
-        <FAQ />
         <Contact />
+        <BookingForm />
+        <FAQ />
       </main>
       <Footer />
       <StickyCTA />
