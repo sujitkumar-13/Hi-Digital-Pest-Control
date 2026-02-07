@@ -36,27 +36,6 @@ const Hero = () => {
               Safe, effective & eco-friendly pest control services for homes and businesses.
               Protect your family and property with guaranteed results.
             </p>
-
-            {/* Pests we handle */}
-            {/* <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8">
-              {[
-                { name: "Ants", emoji: "🐜" },
-                { name: "Cockroaches", emoji: "🪳" },
-                { name: "Mosquitoes", emoji: "🦟" },
-                { name: "Rodents", emoji: "🐀" },
-                { name: "Termites", emoji: "🐜" },
-                { name: "Bed Bugs", emoji: "🛏" },
-              ].map((pest) => (
-                <div
-                  key={pest.name}
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-card border border-border text-sm font-medium hover:border-primary/50 transition-colors shadow-sm"
-                >
-                  <span className="text-lg">{pest.emoji}</span>
-                  <span>{pest.name}</span>
-                </div>
-              ))}
-            </div> */}
-
             {/* Benefits */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
               {benefits.map((benefit) => (
@@ -123,7 +102,7 @@ const Hero = () => {
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
                   <div>
-                    <p className="text-2xl font-bold text-foreground">1000+</p>
+                    <p className="text-2xl font-bold text-foreground">10,000+</p>
                     <p className="text-sm text-muted-foreground">Happy Customers</p>
                   </div>
                 </div>
