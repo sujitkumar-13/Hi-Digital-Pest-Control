@@ -33,7 +33,7 @@ const Testimonials = () => {
     },
   ];
 
-   const trustFeatures = [
+  const trustFeatures = [
     { icon: Star, text: "4.9/5 Google Rating" },
     { icon: Users, text: "10,000+ Families Served" },
     { icon: Award, text: "Government Approved Chemicals" },
@@ -103,9 +103,9 @@ const Testimonials = () => {
 
         {/* Trust Badge */}
         {/* Trust Features Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 mb-12">
           {trustFeatures.map((feature) => (
-            <div key={feature.text} className="flex flex-col items-center p-4 bg-background rounded-xl border border-border shadow-sm text-center group hover:border-secondary/50 transition-colors">
+            <div key={feature.text} className="flex flex-col items-center justify-center h-full p-4 bg-background rounded-xl border border-border shadow-sm text-center group hover:border-secondary/50 transition-colors">
               <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                 <feature.icon className="w-5 h-5 text-secondary" />
               </div>
